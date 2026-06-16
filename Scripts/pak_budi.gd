@@ -18,7 +18,10 @@ func _process(_delta):
 		var dialog_ui = get_tree().current_scene.get_node("DialogueUI")
 		print("DIALOG UI:", dialog_ui)
 
-		dialog_ui.show_text("Pak Budi: Jalan depan rumah saya rusak.")
+		dialog_ui.show_text(
+			"Pak Budi",
+			"Jalan depan rumah saya rusak."
+		)
 
 func _on_body_entered(body):
 	print("MASUK:", body.name)

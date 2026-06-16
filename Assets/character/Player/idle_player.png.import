@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwf5ccbcuosux"
-path="res://.godot/imported/idle_player.png-37f633027e78b2c87f2071657d30a90f.ctex"
+path="res://.godot/imported/idle_player.png-69361a77e10c395ef0ecd5a68c3e7b52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/character/Player/idle_player.png"
-dest_files=["res://.godot/imported/idle_player.png-37f633027e78b2c87f2071657d30a90f.ctex"]
+source_file="res://Assets/Character/Player/idle_player.png"
+dest_files=["res://.godot/imported/idle_player.png-69361a77e10c395ef0ecd5a68c3e7b52.ctex"]
 
 [params]
 

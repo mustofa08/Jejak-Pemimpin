@@ -2,15 +2,18 @@
 
 [ext_resource type="Script" uid="uid://g62jqvu6bcae" path="res://Scripts/player.gd" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://hj61wticpq2x" path="res://Scripts/main.gd" id="1_rgh2o"]
-[ext_resource type="Texture2D" uid="uid://dwf5ccbcuosux" path="res://Assets/character/Player/idle_player.png" id="3_4kpch"]
+[ext_resource type="Texture2D" uid="uid://cpbx8gi7laecc" path="res://Assets/Building/home.png" id="2_1p5hy"]
+[ext_resource type="Texture2D" uid="uid://dwf5ccbcuosux" path="res://Assets/Character/Player/idle_player.png" id="3_4kpch"]
+[ext_resource type="Texture2D" uid="uid://b4le106wtu6ud" path="res://Assets/Building/warung.png" id="3_h1m7h"]
 [ext_resource type="PackedScene" uid="uid://dg73wju0h2l2r" path="res://Scenes/NPC.tscn" id="3_kln2b"]
-[ext_resource type="Texture2D" uid="uid://delps2xw8y7wl" path="res://Assets/character/Player/walk_down.png" id="4_grg3l"]
-[ext_resource type="Texture2D" uid="uid://rab3052gliod" path="res://Assets/character/Player/walk_left.png" id="5_frkhe"]
+[ext_resource type="Texture2D" uid="uid://wn6jbunmky3v" path="res://Assets/Building/balaiDesa.png" id="4_erwvk"]
+[ext_resource type="Texture2D" uid="uid://delps2xw8y7wl" path="res://Assets/Character/Player/walk_down.png" id="4_grg3l"]
+[ext_resource type="Texture2D" uid="uid://rab3052gliod" path="res://Assets/Character/Player/walk_left.png" id="5_frkhe"]
 [ext_resource type="Script" uid="uid://b7qxutsnkn2r4" path="res://Scripts/pak_budi.gd" id="5_pbw6q"]
-[ext_resource type="Texture2D" uid="uid://ii0m8ubqishy" path="res://Assets/character/Player/walk_right.png" id="6_1p5hy"]
+[ext_resource type="Texture2D" uid="uid://ii0m8ubqishy" path="res://Assets/Character/Player/walk_right.png" id="6_1p5hy"]
 [ext_resource type="Script" uid="uid://whc6op43yi5h" path="res://Scripts/dialogue_ui.gd" id="6_v1gob"]
-[ext_resource type="Texture2D" uid="uid://4ak2lxo44k08" path="res://Assets/character/Player/walk_up.png" id="7_h1m7h"]
-[ext_resource type="Texture2D" uid="uid://dtc5avvonbkqv" path="res://Assets/character/NPC/idle_pakBudi.png" id="10_erwvk"]
+[ext_resource type="Texture2D" uid="uid://4ak2lxo44k08" path="res://Assets/Character/Player/walk_up.png" id="7_h1m7h"]
+[ext_resource type="Texture2D" uid="uid://dtc5avvonbkqv" path="res://Assets/Character/NPC/idle_pakBudi.png" id="10_erwvk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2w5on"]
 animations = [{
@@ -55,65 +58,62 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgh2o"]
-size = Vector2(59.10208, 59.59671)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1p5hy"]
+radius = 53.19482
+height = 291.7093
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_346fj"]
 radius = 59.0
 height = 312.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p5hy"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1764706, 0.11764706, 0.07058824, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 5
+
 [node name="Main" type="Node2D" unique_id=1581232210]
 script = ExtResource("1_rgh2o")
 
 [node name="Tanah" type="ColorRect" parent="." unique_id=52230207]
-offset_left = -271.0
-offset_top = 4.0
-offset_right = 1028.0
-offset_bottom = 1002.0
+offset_left = -225.0
+offset_top = 12.0
+offset_right = 3133.0
+offset_bottom = 2617.0
 color = Color(0.51083773, 0.37773558, 0.25925153, 1)
 
-[node name="Rumah A" type="ColorRect" parent="Tanah" unique_id=1930825709]
-layout_mode = 0
-offset_left = 92.0
-offset_top = 71.0
-offset_right = 284.0
-offset_bottom = 239.0
-color = Color(0.3234327, 0.5125515, 0.16673526, 1)
+[node name="Rumah A" type="Sprite2D" parent="Tanah" unique_id=1816225545]
+position = Vector2(2628, 411)
+texture = ExtResource("2_1p5hy")
 
-[node name="Rumah B" type="ColorRect" parent="Tanah" unique_id=2100353238]
-layout_mode = 0
-offset_left = 519.0
-offset_top = 74.0
-offset_right = 711.0
-offset_bottom = 242.0
-color = Color(0.3234327, 0.5125515, 0.16673526, 1)
+[node name="Rumah B" type="Sprite2D" parent="Tanah" unique_id=1353395725]
+position = Vector2(2650, 1220)
+texture = ExtResource("2_1p5hy")
 
-[node name="Rumah C" type="ColorRect" parent="Tanah" unique_id=2091276498]
-layout_mode = 0
-offset_left = 928.0
-offset_top = 69.0
-offset_right = 1120.0
-offset_bottom = 237.0
-color = Color(0.3234327, 0.5125515, 0.16673526, 1)
+[node name="Warung" type="Sprite2D" parent="Tanah" unique_id=311567391]
+position = Vector2(600, 1200)
+scale = Vector2(2, 2)
+texture = ExtResource("3_h1m7h")
+flip_h = true
 
-[node name="Balai RT" type="ColorRect" parent="Tanah" unique_id=576538995]
-layout_mode = 0
-offset_left = 551.0
-offset_top = 776.0
-offset_right = 861.0
-offset_bottom = 959.0
-color = Color(0.33752853, 0.53565437, 0.6941574, 1)
-
-[node name="Warung" type="ColorRect" parent="Tanah" unique_id=1666785910]
-layout_mode = 0
-offset_left = 61.0
-offset_top = 568.0
-offset_right = 278.0
-offset_bottom = 791.0
-color = Color(0.7526165, 0.4195819, 0.14574015, 1)
+[node name="Balai RT" type="Sprite2D" parent="Tanah" unique_id=113985127]
+position = Vector2(586, 2109)
+scale = Vector2(2, 2)
+texture = ExtResource("4_erwvk")
+flip_h = true
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1570441948]
-position = Vector2(-96, 233)
+position = Vector2(614, 1440)
 script = ExtResource("1_idj7w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1883494392]
@@ -123,15 +123,18 @@ autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2132665140]
 position = Vector2(-3, 89)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1808773932]
-position = Vector2(-3, 86)
+position = Vector2(1, 0)
 scale = Vector2(1.052734, 0.9941404)
-shape = SubResource("RectangleShape2D_rgh2o")
+shape = SubResource("CapsuleShape2D_1p5hy")
 
 [node name="PakBudi" parent="." unique_id=1261400772 instance=ExtResource("3_kln2b")]
 texture_filter = 1
-position = Vector2(820, 169)
+position = Vector2(2029, 563)
 script = ExtResource("5_pbw6q")
 
 [node name="Sprite2D" parent="PakBudi" index="0" unique_id=97728783]
@@ -143,15 +146,36 @@ shape = SubResource("CapsuleShape2D_346fj")
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1535664880]
 script = ExtResource("6_v1gob")
 
-[node name="DialogueText" type="Label" parent="DialogueUI" unique_id=1398159176]
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -23.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Halo Warga"
-vertical_alignment = 2
+[node name="DialoguePanel" type="Panel" parent="DialogueUI" unique_id=1278892903]
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.7
+anchor_right = 0.9
+anchor_bottom = 0.95
+theme_override_styles/panel = SubResource("StyleBoxFlat_1p5hy")
+
+[node name="NPCName" type="Label" parent="DialogueUI/DialoguePanel" unique_id=1480626945]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 320.0
+offset_bottom = 50.0
+
+[node name="DialogueText" type="RichTextLabel" parent="DialogueUI/DialoguePanel" unique_id=1975862642]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 820.0
+offset_bottom = 150.0
+
+[node name="ContinueText" type="Label" parent="DialogueUI/DialoguePanel" unique_id=712455540]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 120.0
+offset_right = 900.0
+offset_bottom = 160.0
+text = "[E] Lanjut"
+horizontal_alignment = 2
+autowrap_mode = 3
 
 [editable path="PakBudi"]

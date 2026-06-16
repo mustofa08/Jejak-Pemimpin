@@ -1,22 +1,19 @@
 extends CanvasLayer
 
-@onready var text_label = $DialogueText
-
-func _enter_tree():
-	print("DIALOGUE ENTER TREE")
+@onready var dialogue_panel = $DialoguePanel
+@onready var npc_name = $DialoguePanel/NPCName
+@onready var dialogue_text = $DialoguePanel/DialogueText
+@onready var continue_text = $DialoguePanel/ContinueText
 
 func _ready():
-	print("DIALOGUE READY")
-	print("LABEL:", text_label)
+	dialogue_panel.hide()
 
-	text_label.visible = true
-	text_label.text = "TEST DARI READY"
+func show_text(name, message):
+	npc_name.text = name
+	dialogue_text.text = message
+	continue_text.text = "[E] Lanjut"
 
-func show_text(message):
-	print("SHOW TEXT DIPANGGIL")
-
-	text_label.text = message
-	text_label.visible = true
+	dialogue_panel.show()
 
 func hide_text():
-	text_label.visible = false
+	dialogue_panel.hide()

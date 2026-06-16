@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4ak2lxo44k08"
-path="res://.godot/imported/walk_up.png-7f4d3f55e6c774228f1ea012ae3a818e.ctex"
+uid="uid://cpbx8gi7laecc"
+path="res://.godot/imported/home.png-bee3122d65091d4b58c4ed228e3ad716.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/Player/walk_up.png"
-dest_files=["res://.godot/imported/walk_up.png-7f4d3f55e6c774228f1ea012ae3a818e.ctex"]
+source_file="res://Assets/Building/home.png"
+dest_files=["res://.godot/imported/home.png-bee3122d65091d4b58c4ed228e3ad716.ctex"]
 
 [params]
 
