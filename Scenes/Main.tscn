@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://r5imvopa2l60"]
+
+[ext_resource type="Script" uid="uid://g62jqvu6bcae" path="res://Scripts/player.gd" id="1_idj7w"]
+[ext_resource type="Script" uid="uid://hj61wticpq2x" path="res://Scripts/main.gd" id="1_rgh2o"]
+[ext_resource type="Texture2D" uid="uid://dwf5ccbcuosux" path="res://Assets/character/Player/idle_player.png" id="3_4kpch"]
+[ext_resource type="PackedScene" uid="uid://dg73wju0h2l2r" path="res://Scenes/NPC.tscn" id="3_kln2b"]
+[ext_resource type="Texture2D" uid="uid://delps2xw8y7wl" path="res://Assets/character/Player/walk_down.png" id="4_grg3l"]
+[ext_resource type="Texture2D" uid="uid://rab3052gliod" path="res://Assets/character/Player/walk_left.png" id="5_frkhe"]
+[ext_resource type="Script" uid="uid://b7qxutsnkn2r4" path="res://Scripts/pak_budi.gd" id="5_pbw6q"]
+[ext_resource type="Texture2D" uid="uid://ii0m8ubqishy" path="res://Assets/character/Player/walk_right.png" id="6_1p5hy"]
+[ext_resource type="Script" uid="uid://whc6op43yi5h" path="res://Scripts/dialogue_ui.gd" id="6_v1gob"]
+[ext_resource type="Texture2D" uid="uid://4ak2lxo44k08" path="res://Assets/character/Player/walk_up.png" id="7_h1m7h"]
+[ext_resource type="Texture2D" uid="uid://dtc5avvonbkqv" path="res://Assets/character/NPC/idle_pakBudi.png" id="10_erwvk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2w5on"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4kpch")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_grg3l")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_frkhe")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1p5hy")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_h1m7h")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgh2o"]
+size = Vector2(59.10208, 59.59671)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_346fj"]
+radius = 59.0
+height = 312.0
+
+[node name="Main" type="Node2D" unique_id=1581232210]
+script = ExtResource("1_rgh2o")
+
+[node name="Tanah" type="ColorRect" parent="." unique_id=52230207]
+offset_left = -271.0
+offset_top = 4.0
+offset_right = 1028.0
+offset_bottom = 1002.0
+color = Color(0.51083773, 0.37773558, 0.25925153, 1)
+
+[node name="Rumah A" type="ColorRect" parent="Tanah" unique_id=1930825709]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 71.0
+offset_right = 284.0
+offset_bottom = 239.0
+color = Color(0.3234327, 0.5125515, 0.16673526, 1)
+
+[node name="Rumah B" type="ColorRect" parent="Tanah" unique_id=2100353238]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 74.0
+offset_right = 711.0
+offset_bottom = 242.0
+color = Color(0.3234327, 0.5125515, 0.16673526, 1)
+
+[node name="Rumah C" type="ColorRect" parent="Tanah" unique_id=2091276498]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 69.0
+offset_right = 1120.0
+offset_bottom = 237.0
+color = Color(0.3234327, 0.5125515, 0.16673526, 1)
+
+[node name="Balai RT" type="ColorRect" parent="Tanah" unique_id=576538995]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 776.0
+offset_right = 861.0
+offset_bottom = 959.0
+color = Color(0.33752853, 0.53565437, 0.6941574, 1)
+
+[node name="Warung" type="ColorRect" parent="Tanah" unique_id=1666785910]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 568.0
+offset_right = 278.0
+offset_bottom = 791.0
+color = Color(0.7526165, 0.4195819, 0.14574015, 1)
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1570441948]
+position = Vector2(-96, 233)
+script = ExtResource("1_idj7w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1883494392]
+sprite_frames = SubResource("SpriteFrames_2w5on")
+animation = &"walk_up"
+autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2132665140]
+position = Vector2(-3, 89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1808773932]
+position = Vector2(-3, 86)
+scale = Vector2(1.052734, 0.9941404)
+shape = SubResource("RectangleShape2D_rgh2o")
+
+[node name="PakBudi" parent="." unique_id=1261400772 instance=ExtResource("3_kln2b")]
+texture_filter = 1
+position = Vector2(820, 169)
+script = ExtResource("5_pbw6q")
+
+[node name="Sprite2D" parent="PakBudi" index="0" unique_id=97728783]
+texture = ExtResource("10_erwvk")
+
+[node name="CollisionShape2D" parent="PakBudi/Area2D" parent_id_path=PackedInt32Array(1261400772, 2026659969) index="0" unique_id=1273523004]
+shape = SubResource("CapsuleShape2D_346fj")
+
+[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1535664880]
+script = ExtResource("6_v1gob")
+
+[node name="DialogueText" type="Label" parent="DialogueUI" unique_id=1398159176]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Halo Warga"
+vertical_alignment = 2
+
+[editable path="PakBudi"]
