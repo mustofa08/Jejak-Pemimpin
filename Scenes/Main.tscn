@@ -14,6 +14,9 @@
 [ext_resource type="Script" uid="uid://whc6op43yi5h" path="res://Scripts/dialogue_ui.gd" id="6_v1gob"]
 [ext_resource type="Texture2D" uid="uid://4ak2lxo44k08" path="res://Assets/Character/Player/walk_up.png" id="7_h1m7h"]
 [ext_resource type="Texture2D" uid="uid://dtc5avvonbkqv" path="res://Assets/Character/NPC/idle_pakBudi.png" id="10_erwvk"]
+[ext_resource type="Script" uid="uid://de1twncvvfclb" path="res://Scenes/game_manager.gd" id="15_h1m7h"]
+[ext_resource type="Script" uid="uid://cmdn6p4jsik5w" path="res://Scenes/reputation_ui.gd" id="16_erwvk"]
+[ext_resource type="Script" uid="uid://m08twrano807" path="res://Scenes/quest_ui.gd" id="17_2w5on"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2w5on"]
 animations = [{
@@ -82,6 +85,12 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 corner_detail = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2w5on"]
+bg_color = Color(0.16862746, 0.12941177, 0.09411765, 0.78431374)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_346fj"]
+bg_color = Color(0.22745098, 0.14117648, 0.07058824, 0.81960785)
+
 [node name="Main" type="Node2D" unique_id=1581232210]
 script = ExtResource("1_rgh2o")
 
@@ -143,6 +152,9 @@ texture = ExtResource("10_erwvk")
 [node name="CollisionShape2D" parent="PakBudi/Area2D" parent_id_path=PackedInt32Array(1261400772, 2026659969) index="0" unique_id=1273523004]
 shape = SubResource("CapsuleShape2D_346fj")
 
+[node name="InteractionLabel" parent="PakBudi" index="2" unique_id=1030657072]
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1535664880]
 script = ExtResource("6_v1gob")
 
@@ -152,6 +164,7 @@ anchor_left = 0.1
 anchor_top = 0.7
 anchor_right = 0.9
 anchor_bottom = 0.95
+offset_bottom = -42.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1p5hy")
 
 [node name="NPCName" type="Label" parent="DialogueUI/DialoguePanel" unique_id=1480626945]
@@ -160,6 +173,8 @@ offset_left = 20.0
 offset_top = 10.0
 offset_right = 320.0
 offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.96862745, 0.84313726, 0.45490196, 1)
+theme_override_font_sizes/font_size = 22
 
 [node name="DialogueText" type="RichTextLabel" parent="DialogueUI/DialoguePanel" unique_id=1975862642]
 layout_mode = 0
@@ -169,13 +184,69 @@ offset_right = 820.0
 offset_bottom = 150.0
 
 [node name="ContinueText" type="Label" parent="DialogueUI/DialoguePanel" unique_id=712455540]
-layout_mode = 0
-offset_left = 700.0
-offset_top = 120.0
-offset_right = 900.0
-offset_bottom = 160.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -108.79993
+offset_top = -0.5999756
+offset_right = -8.799927
+offset_bottom = 22.400024
+theme_override_colors/font_color = Color(0.7411765, 0.7411765, 0.7411765, 1)
 text = "[E] Lanjut"
 horizontal_alignment = 2
 autowrap_mode = 3
+
+[node name="GameManager" type="Node2D" parent="." unique_id=428251654]
+script = ExtResource("15_h1m7h")
+
+[node name="ReputationUI" type="CanvasLayer" parent="." unique_id=1268281324]
+script = ExtResource("16_erwvk")
+
+[node name="ReputationPanel" type="Panel" parent="ReputationUI" unique_id=2111652146]
+offset_right = 260.0
+offset_bottom = 180.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2w5on")
+
+[node name="Label" type="Label" parent="ReputationUI/ReputationPanel" unique_id=409238033]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 250.0
+offset_bottom = 170.0
+text = "Hari 1 / 14
+
+Pemuda   : 50
+Keluarga : 50
+Agama    : 50
+Sesepuh  : 50"
+
+[node name="QuestUI" type="CanvasLayer" parent="." unique_id=1436395520]
+offset = Vector2(1010, 10)
+transform = Transform2D(1, 0, 0, 1, 1010, 10)
+script = ExtResource("17_2w5on")
+
+[node name="QuestPanel" type="Panel" parent="QuestUI" unique_id=1544286035]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1287.0
+offset_top = -15.0
+offset_right = -1007.0
+offset_bottom = 85.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_346fj")
+
+[node name="Label" type="Label" parent="QuestUI/QuestPanel" unique_id=132518446]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 270.0
+offset_bottom = 90.0
+text = "Quest Aktif
+
+Belum ada tugas"
 
 [editable path="PakBudi"]

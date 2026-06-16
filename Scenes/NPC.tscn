@@ -14,3 +14,15 @@ texture = ExtResource("1_tdvfm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1273523004]
 shape = SubResource("CircleShape2D_fo5tq")
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=1030657072]
+visible = false
+offset_left = -25.0
+offset_top = -10.0
+offset_right = 24.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.9710881, 0.41341987, 0.61641514, 1)
+theme_override_colors/font_outline_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 40
+text = "[E]"
